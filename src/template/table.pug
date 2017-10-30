@@ -1,0 +1,55 @@
+table
+  thead
+    tr
+      th
+      th(class='command') Команда
+      th М
+      th(class='collapsible') В
+      th(class='collapsible') Н
+      th(class='collapsible') П
+      th(class='collapsible') Заб
+      th(class='collapsible') Проп
+      th(class='light-grey') О
+  tbody
+    each team in teams
+      tr
+        td(class=`${team.colorClass}`)= team.place
+        td(class='command')
+          i(class=`flag ${team.flagClass}`)
+          a(href= team.tag_url)= team.name
+        td= team.matches
+        td(class='collapsible')= team.win
+        td(class='collapsible')= team.draw
+        td(class='collapsible')= team.lose
+        td(class='collapsible')= team.score
+        td(class='collapsible')= team.goals
+        td(class='light-grey')= team.conceded_goals
+
+p
+  b М
+  |
+  | - матчи,
+  |
+  b B
+  |
+  | - выигрыши,
+  |
+  b Н
+  |
+  | - ничьи,
+  |
+  b П
+  |
+  | - проигрыши,
+  |
+  b Заб
+  |
+  | - забитые голы,
+  |
+  b Проп
+  |
+  | - пропущенные голы,
+  |
+  b О
+  |
+  | - очки в турнире
